@@ -28,6 +28,6 @@ public class MarkdownParseTest {
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
 
-        assertEquals(test,links);
+        assertEquals(test,links); HI
     }
 }
