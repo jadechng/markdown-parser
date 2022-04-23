@@ -13,11 +13,6 @@ public class MarkdownParse {
         
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
-		
-	    //for file with no links
-            if (!markdown.substring(currentIndex).contains("[")){
-                break;
-            }
 
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
