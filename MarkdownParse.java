@@ -11,13 +11,13 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
         
-        // considers empty file
-        if (markdown.length() == 0){
-            return null; 
-        }
-        
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+		
+	    //for file with no links
+            if (!markdown.substring(currentIndex).contains("[")){
+                break;
+            }
 
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
