@@ -24,7 +24,14 @@ public class MarkdownParse {
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", currentIndex);
             int closeParen = markdown.indexOf(")", openParen);
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
+		
+	    if(closeBracket + 1 == openParen){ //makes sure the hyperlink is next to the url, making it a valid link
+                if((markdown.contains("!") && !(markdown.indexOf("!",currentIndex) == openBracket - 1))
+                    ||!markdown.contains("!")){ //makes sure it is not an image
+                    toReturn.add(markdown.substring(openParen + 1, closeParen));
+                }
+            }
+
             currentIndex = closeParen + 1;
             
             //considers infinite loop caused by empty line
