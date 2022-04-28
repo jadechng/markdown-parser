@@ -26,15 +26,14 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", currentIndex);
             int closeParen = markdown.indexOf(")", openParen);
 		
-	    /*
+	    
             if(closeBracket + 1 == openParen){ //makes sure the hyperlink is next to the url, making it a valid link
                 if((markdown.contains("!") && !(markdown.indexOf("!",currentIndex) == openBracket - 1))
                     ||!markdown.contains("!")){ //makes sure it is not an image
                     toReturn.add(markdown.substring(openParen + 1, closeParen));
                 }
             }
-        */
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
+        
             currentIndex = closeParen + 1;
             
            
