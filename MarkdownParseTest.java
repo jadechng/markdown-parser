@@ -24,9 +24,12 @@ public class MarkdownParseTest {
 
     @Test
     public void getLinkstest() throws IOException{
-        Path fileName = Path.of("test-file.md");
+        Path fileName = Path.of("failedfile2.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
-
+        ArrayList<String> expected = new ArrayList<String>();
+        //expected.add("https://www.google.com/");
+        //expected.add("https://www.image.com/");
+        assertEquals(expected, links);
     }
 }
