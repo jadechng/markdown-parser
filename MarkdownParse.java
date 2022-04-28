@@ -34,10 +34,12 @@ public class MarkdownParse {
 
             currentIndex = closeParen + 1;
             
+            /*
             //considers infinite loop caused by empty line
             if (!markdown.substring(closeParen).contains("[")){
                 break;
             }
+            */
 
         }
 
