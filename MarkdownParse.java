@@ -35,7 +35,7 @@ public class MarkdownParse {
             }
 
         
-            //currentIndex = closeParen + 1;
+            currentIndex = closeParen + 1;
             
            
             
